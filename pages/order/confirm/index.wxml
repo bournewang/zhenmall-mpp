@@ -1,0 +1,85 @@
+<!--pages/order/ready.wxml-->
+<view class="address">
+  <view class="content">
+    <view wx:if="{{address.contact}}" bindtap="chooseAddress">
+      <view class="ssq">{{address.contact}} {{address.mobile}}</view>
+      <view class="detail">
+        <image src="/static/icons/ico_add.png" />
+        <!-- {{address.province}} {{address.city}} {{address.area}}  -->
+        {{address.display_address}}
+      </view>
+    </view>
+    <view wx:else class="choose-address" bindtap="chooseAddress">
+      请选择收货地址
+    </view>
+  </view>
+</view>
+<view class="order">
+  <view class="gwmx">购物明细</view>
+  <view class="goods" wx:for="{{list}}" wx:key="{{item.id}}">
+    <view class="name">
+      <view class="mingzi">{{item.name}}</view>
+      <!-- <view class="guige">{{item.choosedGGLabels}}</view> -->
+    </view>
+    <view class="num">x{{item.quantity}}</view>
+    <view class="amount">￥ {{item.price}}</view>
+  </view>
+  <view class="goods">
+    <view class="name">
+      <view class="mingzi"></view>
+    </view>
+    <view class="heji">共计:￥
+      <text>{{amount}}</text>
+    </view>
+  </view>
+
+</view>
+
+
+
+<view class="other">
+  <view class="o-item" wx:if="{{okManjian.length}}">
+    <view>满减</view>
+    <view class="fushu">-￥{{okManjian[1]}}</view>
+  </view>
+
+  <!-- <view class="o-item" bindtap='chooseCoupon'>
+    <view>优惠券
+      <text class="cfqb h">惠</text>
+    </view>
+    <view wx:if="{{!couponList.length}}" class="disable">无可用</view>
+    <view wx:elif="{{coupon}}" class="fushu">-￥{{coupon ? couponAmount : 0}}</view>
+    <view wx:else>{{lan.replace(__['可用{%s}张'], [couponList.length])}}</view>
+  </view> -->
+  <view class="o-item">
+    <view>实付</view>
+    <view class="shifu">￥{{amount}}</view>
+  </view>
+</view>
+<view class="remark">
+  <view class="title">特殊需求备注</view>
+  <textarea class="input" bindinput='inputRemark' placeholder="请写下您的特殊需求备注"></textarea>
+</view>
+<view class="use-balance" wx:if="{{info.balance&& info.balance >= amount}}">
+  <!-- <view class="label">使用余额(可用余额 ￥{{info.balance}})</view> -->
+  <!-- <view class="label"></view> -->
+  <view class="label">使用余额({{info.balance}}元)</view>
+  <checkbox-group bindchange="useBalanceChange">
+    <checkbox checked="{{useBalance}}" color="red"/>
+  </checkbox-group>
+</view>
+<view style="margin-bottom: 150rpx;"></view>
+
+<cover-view class="bottom">
+  <cover-view class="kongbai">
+    <cover-view class="lb">实付:</cover-view>
+    <cover-view class="dw">￥</cover-view>
+    <cover-view class="count">{{amount}}</cover-view>
+  </cover-view>
+  <cover-view wx:if="{{amount>0}}" class="submit " bindtap="toOrder">
+    <cover-view>去支付</cover-view>
+  </cover-view>
+  <cover-view wx:else class="submit disabled">
+    <cover-view>请先选择商品</cover-view>
+  </cover-view>
+</cover-view>

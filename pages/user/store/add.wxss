@@ -1,0 +1,25 @@
+/* pages/user/store/add.wxss */
+.uploader {
+  margin-top: 10rpx;
+}
+
+.form {
+  padding-bottom: 50rpx;
+}
+
+.btn {
+  width: 100%;
+  text-align: center;
+  border-radius: 50px;
+  background-color: #db0000;
+  color: #fff;
+  padding: 20rpx 0;
+}
+
+.error {
+  color: #ee0a24;
+}
+
+.placeholder.error {
+  color: #ee0a24;
+}

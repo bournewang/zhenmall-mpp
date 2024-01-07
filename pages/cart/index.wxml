@@ -1,0 +1,55 @@
+<!--pages/cart/index.wxml-->
+
+<view class="list">
+  <block wx:if="{{canLocation === 1}}">
+    <movable-area wx:for="{{list}}" wx:key="index" class="area">
+      <movable-view class="area-view" direction="horizontal" bindchange="move" damping="100" x="{{item.x}}" y="{{item.y}}" data-index="{{index}}">
+        <view class="item">
+          <!-- <radio class="radio" color="red" value="1" bindtap="choose" checked="{{item.checked}}" data-index="{{index}}" disabled='{{!item.status}}'></radio> -->
+          <view class="radio" color="red" value="1" bindtap="choose" checked="{{item.checked}}" data-index="{{index}}" disabled='{{!item.status}}'></view>
+          <view class="content">
+            <image src="{{item.thumb||'/static/images/search_no.png'}}" class="left"><view class="no-status" wx-if="{{!item.status}}"></view></image>
+            <view class="middle">
+              <view class="title">{{item.name}}</view>
+              <view class="desc"></view>
+              <view class="price">
+                <text class="dw">￥</text>{{item.subtotal}}
+              </view>
+              <view class="num">
+                <image class="dec" src="/static/icons/-.png" bindtap='decNum' data-index="{{index}}"></image>
+                <view class="int">{{item.quantity}}</view>
+                <image class="inc" src="/static/icons/+.png" bindtap='incNum' data-index="{{index}}"></image>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class="del-btn" bindtap="remove" data-index="{{index}}">删除</view>
+      </movable-view>
+    </movable-area>
+  </block>
+  <!-- <view wx:if="{{canLocation === -1}}" class="empty">
+    <view class="empty-label">获取门店信息失败</view>
+    <view class="empty-label">请前往菜单页确认下单门店</view>
+    <button class="empty-btn" bindtap='toCaidan'>立即前往</button>
+  </view> -->
+  <view wx:if="{{canLocation === 1 && list.length===0}}" class="empty">
+    <view class="empty-image" src="/static/common/empty-cart.png"></view>
+    <view class="empty-label">购物车是空的，快去挑选商品吧</view>
+  </view>
+
+
+
+</view>
+
+
+
+<view class="bottom">
+  <view class="kongbai">
+    <view class="lb">合计:</view>
+    <view class="dw">￥</view>
+    <view class="count">{{amount}}</view>
+  </view>
+  <view class="submit" bindtap="toOrder">
+    <text>去结算</text>
+  </view>
+</view>

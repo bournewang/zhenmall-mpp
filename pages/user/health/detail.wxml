@@ -1,0 +1,23 @@
+<!--pages/user/store/memeber.wxml-->
+<view class="list">
+  <van-cell-group title="{{detail.name}}">
+    <van-cell title="专家" value="{{detail.expert_name}}" />
+    <van-cell title="专家头像" center>
+      <image class='avatar' mode="widthFix" src="{{detail.expert_img}}"></image>
+    </van-cell>
+    <van-cell title="咨询时间" value="{{detail.created_at}}" />
+    <van-cell title="健康状况描述及问题" value="{{detail.detail}}" />
+    <van-cell title="病例和检验报告">
+      <view class="images">
+        <image wx:for="{{detail.imgs.thumb}}" wx:key="index" src="{{item}}" data-index="{{index}}" mode="widthFix" bindtap="preview"></image>
+      </view>
+    </van-cell>
+    <van-cell title="意见" value="{{detail.suggestion}}" />
+    <van-cell title="状态" value="{{detail.status_label}}" />
+  </van-cell-group>
+</view>
+<view class="btn">
+  <button class="kf" bindtap="openWorkWx" open-type="contact">
+    在线专家咨询
+  </button>
+</view>

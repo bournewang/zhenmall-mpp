@@ -1,0 +1,9 @@
+/* pages/order/express/index.wxss */
+page{
+  padding-bottom: 50rpx;
+}
+.steps{
+  /* padding-left: 100rpx; */
+  box-sizing: border-box;
+  margin-top: 30rpx;
+}

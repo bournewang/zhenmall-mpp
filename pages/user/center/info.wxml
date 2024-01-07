@@ -1,0 +1,55 @@
+<!--pages/user/center/info.wxml-->
+<van-cell-group>
+  <van-cell title="昵称">
+    <view>
+      <input type="nickname" wx:if="{{editing}}" class="nickname-input" placeholder="请输入昵称" bindinput="bindinputnickname" bindblur="bindinputnickname"/>
+      <text wx:else>{{info.nickname||""}}</text>
+    </view>
+  </van-cell>
+  <van-cell title="头像" center>
+    <view style="position: relative;">
+      <image class="userinfo-avatar" src="{{info.avatar||'/static/images/search_no.png'}}" />
+      <button wx:if="{{editing}}" open-type="chooseAvatar" class="choose-avatar" bindchooseavatar="chooseAvatar">选择</button>
+    </view>
+  </van-cell>
+  <van-cell title="手机号">
+    <view wx:if="{{info.mobile}}" class="mobile">
+      <view>{{info.mobile}}</view>
+    </view>
+    <view wx:else class="mobile">
+      <button class="mobile-btn" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">授权</button>
+    </view>
+  </van-cell>
+  <van-cell title="支付宝账号" center>
+    <view>
+      <input wx:if="{{editing}}" class="nickname-input" placeholder="请输入支付宝账号" bindinput="bindinputAlipay"/>
+      <text wx:else>{{info.alipay||""}}</text>
+    </view>
+  </van-cell>
+  <van-cell wx:if="{{info.referer_name}}" class="item" title="推荐人">
+      <view>
+        {{info.referer_name}}
+      </view>
+    </van-cell>
+  <!-- <van-cell title="性别">
+    <view>{{info.gender||'未知'}}</view>
+  </van-cell> -->
+  <!-- <van-cell title="类型"  >
+    <view>
+      {{info.type_label||'未知'}}
+      <!-- <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+        <view class="picker">
+          {{info.type_label||'未知'}}
+        </view>
+      </picker> 
+    </view>
+  </van-cell> -->
+</van-cell-group>
+
+<view class="btns">
+  <button wx:if="{{editing}}" class="cancel" bind:tap="cancelSave">取消</button>
+  <button wx:if="{{editing}}" class="save" bind:tap="save">保存</button>
+  <button wx:else class="edit" bind:tap="bindToEdit">修改</button>
+ 
+</view>
+<button wx:if="{{info.id&&!editing}}" class="outlogin" bind:tap="outLogin">退出登录</button>

@@ -1,0 +1,15 @@
+<!--pages/user/store/memeber.wxml-->
+<view class="list members">
+  <van-cell-group>
+    <van-cell wx:for="{{list}}" wx:key="*this" is-link url="" center use-label-slot>
+      <view slot="title" class="info">
+        <image class="avatar" src="{{item.avatar||'/static/images/search_no.png'}}"></image>
+        <view class="nickname">{{item.nickname||''}}</view>
+      </view>
+      <view slot="label">
+        <view>{{item.name}}</view>
+        <view>{{item.mobile}}</view>
+      </view>
+    </van-cell>
+  </van-cell-group>
+</view>

@@ -1,0 +1,18 @@
+/* pages/user/store/memeber.wxss */
+.members {
+  /* padding: 30rpx; */
+}
+
+.info {
+  display: flex;
+  align-items: center;
+}
+
+.info .avatar {
+  width: 80rpx;
+  height: 80rpx;
+}
+
+.info .nickname {
+  margin-left: 20rpx;
+}

@@ -1,0 +1,81 @@
+/* pages/user/center/info.wxss */
+page{
+  position: relative;
+}
+.mobile{
+  text-align: right;
+}
+.mobile-btn{
+  // width: 88rpx;
+  height: 48rpx;
+  font-size: 28rpx;
+  line-height: 48rpx;
+  background-color: red;
+  color: #fff;
+
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 0 10rpx;
+  margin: 0;
+  border: none;
+  &::after{
+    display: none;
+  }
+}
+.userinfo-avatar{
+  height: 88rpx;
+  width: 88rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  display: inline-block;
+}
+.choose-avatar{
+  font-size: 22rpx;
+  width: 88rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  text-align: center;
+  padding: 0;
+  border-radius: 50%;
+  overflow: hidden;
+  border: none;
+  float: right;
+  position: absolute;
+  right: 0;
+  top: 0;
+  opacity: 0.3;
+  z-index: 999;
+  background-color: #000;
+  color: #fff;
+  &::before,&::after{
+    display: none;
+  }
+}
+.nickname-input{
+  // border-bottom: 1px solid #eee;
+}
+.btns{
+  margin-top: 100rpx;
+  box-sizing: border-box;
+  padding: 0 30rpx;
+  .edit, .save,.cancel{
+    background-color: #db2020;
+    color: #fff;
+  }
+  .cancel{
+    background-color: #fff;
+    color: #333;
+    margin-bottom: 30rpx;
+  }
+  
+}
+
+.outlogin{
+  background-color: #fff;
+  color: #333;
+  margin-top: 30rpx;
+  position: fixed;
+  bottom: 100rpx;
+  left: 30rpx;
+  width: 690rpx;
+}

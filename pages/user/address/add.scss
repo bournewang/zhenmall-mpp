@@ -1,0 +1,93 @@
+/* pages/profile/address/add.wxss */
+
+.page {
+  padding: 0 30rpx;
+  box-sizing: border-box;
+  display: block;
+}
+
+.item {
+  display: flex;
+  height: 80rpx;
+  width: 100%;
+  box-sizing: border-box;
+  align-items: center;
+  margin-top: 20rpx;
+  font-size: 26rpx;
+}
+
+.item .label {
+  height: 80rpx;
+  width: 140rpx;
+  text-align: left;
+  line-height: 80rpx;
+}
+
+.item .input {
+  width: 530rpx;
+}
+
+.item .label {
+  line-height: 80rpx;
+}
+
+.item icon {
+  margin-left: 10rpx;
+}
+
+.item .region {
+  width: 550rpx;
+}
+
+.item .place {
+  color: gray;
+  box-sizing: border-box;
+  width: 550rpx;
+  display: flex;
+  justify-content: space-between;
+  height: 80rpx;
+  line-height: 80rpx;
+  align-items: center;
+}
+
+.place.picker {
+  color: #000;
+}
+
+.item .place .icon {
+  width: 80rpx;
+  height: 80rpx;
+}
+
+.item .bq {
+  width: 510rpx;
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.tag {
+  width: 140rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  text-align: center;
+  background-color: #eee;
+  color: grey;
+  border-radius: 50px;
+}
+
+.tag.xz {
+  background-color: #db0000;
+  color: #fff;
+}
+
+.white-red-btn {
+  background-color: #fff;
+  border: 1px solid #db0000;
+  color: #db0000;
+  border-radius: 50rpx;
+  width: 100%;
+  font-size: 36rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+}

@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "van-cell": "@vant/weapp/cell/index",
+    "van-rate": "@vant/weapp/rate/index"
+  },
+  "navigationBarTitleText": "商品评价"
+}

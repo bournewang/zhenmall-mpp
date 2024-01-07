@@ -1,0 +1,92 @@
+/* pages/user/center/login.wxss */
+
+.add-btn {
+  width: 750rpx;
+  position: fixed;
+  top: 35%;
+  left: 0;
+  height: 150rpx;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+}
+
+.add-btn .red-btn {
+  width: 670rpx;
+}
+
+.red-btn {
+  background-color: #db0000;
+  color: #fff;
+  border-radius: 50rpx;
+  width: 100%;
+  font-size: 36rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+}
+
+.privacy {}
+
+.privacy-line {
+  margin-top: 50rpx;
+  display: flex;
+  align-items: center;
+  /* font-size: 24rpx; */
+
+}
+
+.privacy-line radio {
+  /* font-size: 20rpx; */
+  margin-right: 20rpx;
+  /* width: 30rpx !important; */
+  /* height: 30rpx !important; */
+}
+
+.privacy-text {
+  color: #00a1ff;
+}
+
+.privacy {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.privacy .con {
+  background-color: #fff;
+  width: 550rpx;
+  box-sizing: border-box;
+  padding: 30rpx 20rpx;
+  border-radius: 5px;
+}
+.privacy .con .title{
+  font-size: 28rpx;
+  text-align: center;
+  padding-bottom: 20rpx;
+  box-sizing: border-box;
+}
+
+.privacy .con .content{
+  height: 500rpx;
+  overflow-y: scroll;
+  font-size: 24rpx;
+  padding-bottom: 20rpx;
+  box-sizing: border-box;
+}
+
+.privacy .con .btn{
+  font-size: 32rpx;
+  color: #00a1ff;
+  text-align: center;
+  padding-top: 30rpx;
+  box-sizing: border-box;
+}

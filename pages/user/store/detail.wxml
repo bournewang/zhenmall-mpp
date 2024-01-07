@@ -1,0 +1,13 @@
+<van-cell title="名称" value="{{detail.name}}" />
+<van-cell title="公司名" value="{{detail.company_name}}" />
+<van-cell title="店长" value="{{detail.contact}}" />
+<van-cell title="店长电话" value="{{detail.mobile}}" bindtap="callPhone" />
+<van-cell title="地址" value="{{detail.address}}" />
+<van-cell title="营业执照号码" value="{{detail.license_no}}" />
+<van-cell title="状态" value="{{detail.status_label}}" />
+
+<van-cell title="合同">
+  <view class="images">
+    <image wx:for="{{detail.contract.thumb}}" wx:key="index" src="{{item}}" data-key="contract" data-index="{{index}}" mode="widthFix" bindtap="preview"></image>
+  </view>
+</van-cell>

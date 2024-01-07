@@ -1,0 +1,4 @@
+<!--pages/user/center/qr.wxml-->
+<view class="page">
+  <image class="qr" src="{{img||'/static/images/search_no.png'}}" mode="widthFix"></image>
+</view>

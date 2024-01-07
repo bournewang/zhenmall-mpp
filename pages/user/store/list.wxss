@@ -1,0 +1,15 @@
+/* pages/user/store/memeber.wxss */
+page {
+  /* padding: 30rpx; */
+  background-color: #f5f5f5;
+
+}
+
+.list {
+  padding-bottom: 50rpx;
+}
+
+.list .van-cell-group__title {
+  font-size: 32rpx;
+  /* font-weight: bold; */
+}

@@ -1,0 +1,7 @@
+/* pages/user/store/detail.wxss */
+.images image{
+  width: 100rpx;
+  height: 100rpx;
+  display: inline-block;
+  margin-right: 10rpx;
+}

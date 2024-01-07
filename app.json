@@ -1,0 +1,80 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/user/center/index",
+    "pages/goods/index",
+    "pages/user/address/index",
+    "pages/user/address/add",
+    "pages/cart/index",
+    "pages/user/center/login",
+    "pages/order/confirm/index",
+    "pages/goods/categories",
+    "pages/goods/category/index",
+    "pages/order/detail/index",
+    "pages/order/list/index",
+    "pages/order/express/index",
+    "pages/order/comment/add",
+    "pages/order/comment/detail",
+    "pages/goods/comments/list",
+    "pages/user/center/info",
+    "pages/user/sales/index",
+    "pages/user/sales/detail",
+    "pages/user/store/memeber",
+    "pages/user/store/list",
+    "pages/user/services/index",
+    "pages/user/services/detail",
+    "pages/user/store/customers",
+    "pages/user/store/add",
+    "pages/user/center/qr",
+    "pages/user/health/index",
+    "pages/user/health/detail",
+    "pages/user/health/add",
+    "pages/user/store/stock/index",
+    "pages/test/index",
+    "pages/user/store/detail",
+    "pages/user/billing/index",
+    "pages/user/billing/detail",
+    "pages/user/balance/records",
+    "pages/user/quota/records",
+    "pages/user/withdraw/records"
+  ],
+  "tabBar": {
+    "color": "#bababa",
+    "selectedColor": "#db0000",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "static/images/icons/ic_tab_home.png",
+        "selectedIconPath": "static/images/icons/ic_tab_home_on.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/goods/categories",
+        "iconPath": "static/images/icons/ic_tab_cat.png",
+        "selectedIconPath": "static/images/icons/ic_tab_cat_on.png",
+        "text": "分类"
+      },
+      {
+        "pagePath": "pages/cart/index",
+        "iconPath": "static/images/icons/ic_tab_car.png",
+        "selectedIconPath": "static/images/icons/ic_tab_car_on.png",
+        "text": "购物车"
+      },
+      {
+        "pagePath": "pages/user/center/index",
+        "iconPath": "static/images/icons/ic_tab_me.png",
+        "selectedIconPath": "static/images/icons/ic_tab_me_on.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "御甄优选",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json",
+  "plugins": {}
+}

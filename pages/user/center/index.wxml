@@ -1,0 +1,255 @@
+<!--pages/user/user.wxml-->
+<view class="container">
+  <view class="userinfo">
+    <image class="userinfo-avatar" src="{{info.avatar||'/static/images/search_no.png'}}"/>
+    <view class='userinfo-nickname' >
+      <view wx:if="{{!info.id}}" class="a login-btn" bind:tap="toLogin" >点击登录</view>
+      <view wx:else class="a" lang="zh_CN">{{info.nickname||'微信用户'}}</view>
+      <view>
+        <van-icon name="qr" color="#000" bind:tap="toQr"/>
+      </view>
+      <!-- <view>
+        <button plain="true" style="color:white;border:1px solid red;line-height: 40rpx; background:#FF0033" size="mini" open-type="getUserInfo" bindgetuserinfo="getUserInfo">更新资料</button>
+        <button plain="true" style="color:white;border:1px solid red;line-height: 40rpx; background:#FF0033;margin-left: 20rpx;" size="mini" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">更新手机号</button>
+      </view> -->
+    </view>
+  </view>
+
+
+
+  <view class="user-order">
+    <view class="header">
+      <text class="a">我的订单</text>
+      <navigator hover-class="none" url="/pages/order/list/index" style="display:flex;justify-content: center;align-items: center;width:160rpx;" data-show-type="0">
+        <text class="b">查看全部</text>
+        <image class="c" src="/static/images/x_right.png"></image>
+      </navigator>
+    </view>
+    <view class="content">
+      <navigator hover-class="none" class="item" url="/pages/order/list/index?status=1" data-show-type="1">
+        <image src="/static/images/order/1.png"></image>
+        <text>待付款</text>
+        <view wx:if="{{orderCount['created']}}" class="target targetOne">{{orderCount['created']}}</view>
+      </navigator>
+      <navigator hover-class="none" class="item" url="/pages/order/list/index?status=2" data-show-type="2">
+        <image src="/static/images/order/2.png"></image>
+        <view>待发货</view>
+        <view wx:if="{{orderCount['paid']}}" class="target targetTwo">{{orderCount['paid']}}</view>
+      </navigator>
+      <navigator hover-class="none" class="item" url="/pages/order/list/index?status=3" data-show-type="3">
+        <image src="/static/images/order/3.png"></image>
+        <view>待收货</view>
+        <view wx:if="{{orderCount['shipped']}}" class="target targetThree">{{orderCount['shipped']}}</view>
+      </navigator>
+      <navigator hover-class="none" class="item" url="/pages/order/list/index?status=4" data-show-type="4">
+        <image src="/static/images/order/4.png"></image>
+        <view>待评价</view>
+        <view wx:if="{{orderCount['complete']}}" class="target targetFour">{{orderCount['complete']}}</view>
+      </navigator>
+      <!-- <navigator hover-class="none" class="item" url="/pages/order/after" data-show-type="4">
+        <image src="/static/images/order/5.png"></image>
+        <view>售后</view>
+        <view wx:if="{{orderCount[101]}}" class="targetFive">{{orderCount[101]}}</view>
+      </navigator> -->
+    </view>
+  </view>
+
+  <view class="money">
+    <view class="item">
+      <view class="label">余额</view>
+      <view class="value">{{info.balance || '0'}} <view class="to-withdraw" bind:tap="showWithdraw">提现</view></view>
+      
+    </view>
+    <view class="item">
+      <view class="label">提现额度</view>
+      <view class="value">{{info.quota || '0'}}</view>
+    </view>
+  </view>
+
+  <view wx:if="{{redpacketsCount>0}}" class="redpack-tips" bind:tap="showbtn">
+    你有 {{redpacketsCount}} 个红包可领！
+  </view>
+
+  <!-- 优惠券第一行 -->
+  <view class="tool">
+    <navigator class="item" url="/pages/user/center/info" hover-class="none">
+      <!-- <image src="/static/images/icons/ic_tab_me.png" class="icon"></image> -->
+      <text class="a">个人资料</text>
+      <view class="go">
+        <image src="/static/images/icons/go.png"></image>
+      </view>
+    </navigator>
+
+    <view class="item" bindtap='selectAddress'>
+      <!-- <image src="/static/images/icons/3.png" class="icon"></image> -->
+      <text class="a">收货地址</text>
+      <view class="go">
+        <image src="/static/images/icons/go.png"></image>
+      </view>
+    </view>
+
+    <!-- <navigator class="item" url='/pages/user/billing/index' hover-class="none">
+
+      <text class="a">结算单</text>
+      <view class="go">
+        <image src="/static/images/icons/go.png"></image>
+      </view>
+    </navigator> -->
+
+    <navigator class="item" url='/pages/user/balance/records' hover-class="none">
+      <text class="a">余额记录</text>
+      <view class="go">
+        <image src="/static/images/icons/go.png"></image>
+      </view>
+    </navigator>
+
+    <navigator class="item" url='/pages/user/quota/records' hover-class="none">
+      <text class="a">提现额度记录</text>
+      <view class="go">
+        <image src="/static/images/icons/go.png"></image>
+      </view>
+    </navigator>
+
+    <navigator class="item" url='/pages/user/withdraw/records' hover-class="none">
+      <text class="a">提现记录</text>
+      <view class="go">
+        <image src="/static/images/icons/go.png"></image>
+      </view>
+    </navigator>
+
+   
+  </view>
+
+  <!-- <view class="tool">
+    <navigator class="item" url='/pages/user/services/index' hover-class="none">
+      <text class="a">我的服务</text>
+      <view class="go">
+        <image src="/static/images/icons/go.png"></image>
+      </view>
+    </navigator>
+    <navigator wx:if="{{info.type=='clerk'}}" class="item" url='/pages/user/sales/detail?id={{info.id}}' hover-class="none">
+      <text class="a">我的业绩</text>
+      <view class="go">
+        <image src="/static/images/icons/go.png"></image>
+      </view>
+    </navigator>
+    <navigator wx:if="{{info.type=='manager'}}" class="item" url='/pages/user/sales/index' hover-class="none">
+      <text class="a">本店业绩</text>
+      <view class="go">
+        <image src="/static/images/icons/go.png"></image>
+      </view>
+    </navigator>
+    <navigator wx:if="{{info.type=='manager'}}" class="item" url='/pages/user/store/stock/index' hover-class="none">
+      <text class="a">商品库存</text>
+      <view class="go">
+        <image src="/static/images/icons/go.png"></image>
+      </view>
+    </navigator>
+  </view> -->
+
+  <!-- 我的门店 -->
+  <!-- <view class="tool">
+ 
+    <navigator wx:if="{{info.type==='salesman'}}" class="item" url='/pages/user/store/list' hover-class="none">
+
+      <text class="a">我开发的门店</text>
+      <view class="go">
+        <image src="/static/images/icons/go.png"></image>
+      </view>
+    </navigator>
+
+    <navigator wx:if="{{info.type==='salesman'}}" class="item" url='/pages/user/store/add' hover-class="none">
+     
+      <text class="a">添加门店</text>
+      <view class="go">
+        <image src="/static/images/icons/go.png"></image>
+      </view>
+    </navigator>
+  </view> -->
+
+
+  <!-- <view class="tool">
+    <navigator class="item" url='/pages/user/health/index' hover-class="none">
+
+      <text class="a">健康咨询</text>
+      <view class="go">
+        <image src="/static/images/icons/go.png"></image>
+      </view>
+    </navigator>
+
+  </view> -->
+
+
+</view>
+
+<view class="rbag_model" wx:if="{{redpacketStep === 1}}" >
+  <view class="rbag_con hidden">
+    <view class="rbag_top">
+      <view class="rbag_top_info">
+        <!-- <image class="rbag_logo" src="/static/icon/logo.jpg" mode=""></image> -->
+        <view class="rbag_logo"></view>
+        <view class="app_name">恭喜发财</view>
+        <view class="rbag_tips">送您一个红包</view>
+      </view>
+    </view>
+    <view class="open_rbag_btn {{redpacketBtnClass}}"  bind:tap="openbtn">開</view>
+  </view>
+  <view class="rbag_con">
+    <view class="hide_btn" bind:tap="closebtn">
+      <icon type="cancel" color="#fbd977" size="28" />
+    </view>
+  </view>
+</view>
+
+<view class="open_rbag_model" wx:if="{{redpacketStep === 2}}">
+  <image class="rbag_conbg" src="/static/icons/openrbag.png"></image>
+  <view class="rbag_conbg open_rbag_con">
+    <view class="open_title">— 恭喜您获得 —</view>
+    <view class="rbag_detail">
+      <view class="open_money">
+        <view class="amount">{{redpacketAmount}}</view>
+        <view class="danwei">元</view>
+      </view>
+      <view class="open_tips">已存入钱包，可直接体现</view>
+    </view>
+    <view class="lookbag_box">
+      <view class="lookbag_btn">
+        <!-- <view class="text" bind:tap="continuebtn">继续开</view> -->
+        <view class="text" bind:tap="closebtn">关闭</view>
+      </view>
+    </view>
+    <!-- <view class="hide_btn" bind:tap="hideopenbtn()">
+      <icon type="cancel" color="#fbd977" size="28" />
+    </view> -->
+  </view>
+</view>
+
+
+<view class="withdraw-dialog" wx:if="{{showWithdraw}}">
+  <view class="form">
+    <view class="label">
+      余额：{{info.balance}}元
+    </view>
+    <view class="label">
+      提现额度：{{info.quota||"0"}}元
+    </view>
+    <view class="label">
+      可提现金额：{{info.quota > info.balance ? info.balance : (info.quota||'0')}}元
+    </view>
+    <view class="label" style="color: #db2020;">
+      说明：满100可提现，只能提现100的整数倍
+    </view>
+    <view class="label-input">
+      提现金额：
+      <input type="number" class="input" value="{{withdrawAmount}}" bindinput="handleInputWithdrawAmount"/>
+    </view>
+
+    <view class="buttons">
+      <button class="cancel" bind:tap="toCancelWithdraw">取消</button>
+      <button class="submit" bind:tap="toWithdraw">提交</button>
+    </view>
+  
+  </view>
+
+
+</view>

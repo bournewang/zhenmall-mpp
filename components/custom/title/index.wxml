@@ -1,0 +1,17 @@
+<view class="title" style="{{style}}">
+    <view wx:if="{{options.type===1}}" class="style_1">
+      <view class="line left" style="{{lineStyle}}"></view>
+      <view class="text" style="{{titleStyle}}">{{options.title}}</view>
+      <view class="line right" style="{{lineStyle}}"></view>
+    </view>
+    <view  wx:if="{{options.type===2}}" class="style_2">
+      <view class="title">
+        <view class="ljw-icon icon-favorite"></view>
+        <view class="text" style="{{titleStyle}}">{{options.title}}</view>
+        <view class="ljw-icon icon-favorite"></view>
+      </view>
+      <view class="subtitle">
+        <view class="text" style="{{subTitleStyle}}">{{options.subtitle}}</view>
+      </view>
+    </view>
+  </view>

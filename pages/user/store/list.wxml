@@ -1,0 +1,23 @@
+<!--pages/user/store/memeber.wxml-->
+<view class="list">
+  <!-- <view class="item">
+    <view class="info">
+      <view class="line">
+        <view class="label">名称</view>
+        <view class="value"></view>
+      </view>
+    
+    </view>
+  </view> -->
+  <van-cell-group wx:for="{{list}}" wx:key="index" title="{{item.name}}" bindtap="toDetail" data-index="{{index}}">
+    <van-cell title="名称" value="{{item.name}}" />
+    <van-cell title="公司名" value="{{item.company_name}}" />
+    <van-cell title="店长" value="{{item.contact}}" />
+    <van-cell title="店长电话" value="{{item.mobile}}" bindtap="callPhone" data-index="{{index}}" />
+    <van-cell title="地址" value="{{item.address}}" />
+    <van-cell title="营业执照号码" value="{{item.license_no}}" />    
+    <van-cell title="状态" value="{{item.status_label}}" />    
+    
+  </van-cell-group>
+
+</view>

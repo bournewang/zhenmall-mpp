@@ -1,0 +1,5 @@
+project.config.json
+.idea
+bin/
+node_modules/
+miniprogram_npm/

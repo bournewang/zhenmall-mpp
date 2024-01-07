@@ -1,0 +1,8 @@
+<!--components/custom/carousel/index.wxml-->
+<swiper indicator-dots="{{indicatorDots}}" class="carousel" style="{{style}}" autoplay indicator-color indicator-active-color="#ffffff" >
+  <block wx:for="{{options.images}}" wx:key="*this">
+    <swiper-item>
+      <image src="{{item.url}}" class="image-item" style="{{style}}" bindtap="redirect" data-index="{{index}}"></image>
+    </swiper-item>
+  </block>
+</swiper>

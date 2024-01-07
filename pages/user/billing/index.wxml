@@ -1,0 +1,33 @@
+<!--pages/user/store/memeber.wxml-->
+<view class="list">
+  <view class="table-title">
+    <view class="th">
+      <view class="tr">序号</view>
+      <view wx:for="{{titles}}" wx:for-item="title" wx:for-index="titleIndex" wx:key="*this" class="tr">{{title}}</view>
+    </view>
+    <view class="th" wx:for="{{list}}" bindtap="toDetail" data-id="{{item.period_label}}" wx:key="index">
+      <view class="td">
+        <view class="grid">
+          <view class="text">{{index+1}}</view>
+        </view>
+      </view>
+      <view wx:for="{{titles}}" wx:for-item="title" wx:for-index="titleIndex" wx:key="*this" class="td">
+        <view class="grid">
+          <view wx:if="{{titleIndex==='img'}}">
+            <image class="avatar" src="{{item[titleIndex]||'/static/images/search_no.png'}}"></image>
+          </view>
+          <view wx:else class="text">
+            <view>{{item[titleIndex]||''}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+  </view>
+
+</view>
+<view class="btn">
+  <navigator class="kf" url="/pages/user/billing/detail">
+    未出账明细
+  </navigator>
+</view>

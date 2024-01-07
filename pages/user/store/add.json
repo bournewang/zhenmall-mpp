@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "开发新店",
+  "usingComponents": {
+    "van-field": "@vant/weapp/field/index",
+    "van-cell": "@vant/weapp/cell/index",
+    "van-cell-group": "@vant/weapp/cell-group/index",
+    "van-uploader": "@vant/weapp/uploader/index"
+  }
+}

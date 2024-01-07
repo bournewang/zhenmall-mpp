@@ -1,0 +1,36 @@
+<view class="contariner">
+  <view class="left">
+    <view class="list">
+      <view class="category {{index==key?'active':''}}" wx:for-index="key" wx:for="{{list}}" wx:key="id" bindtap="handleCategory" data-index="{{key}}">{{item.name}}</view>
+    </view>
+  </view>
+  <view class="right">
+    <!-- <view class="thumb_image">
+        <image src="{{list[index].icon?list[index].icon:'/images/default/default.png'}}"></image>
+      </view> -->
+    <view class="list">
+      <!-- <view wx:for-index="key" wx:for="{{goodsList}}" wx:key="id" data-index="{{key}}"> -->
+      <view>
+        <!-- <navigator class="name" url="/pages/goods/category/index?id={{item.id}}">
+          <view class="name-line"></view>
+          <view class="text">{{item.name}} </view>
+          <view class="name-line"></view>
+        </navigator> -->
+        <view class="item">
+          <!-- <view class="image">
+             <image src="{{item.icon?item.icon:'/images/default/default.png'}}"></image>
+           </view>  -->
+          <van-grid column-num="2" gutter="{{ 5 }}" class="van-goods" border="{{false}}">
+            <van-grid-item use-slot wx:for="{{goodsList}}" wx:for-item="gItem" wx:for-index="gIndex" content-class="van-grid-item" data-id="{{gItem.id}}" url="/pages/goods/index?id={{gItem.id}}">
+              <image class="goods-thumb" src="{{gItem.thumb}}" mode="aspectFill" />
+              <view class="goods-name ellipsis-2">{{gItem.name}}</view>
+              <view class="price">￥{{gItem.price}}
+                <view class="old-price">￥{{gItem.price_ori}}</view>
+              </view>
+            </van-grid-item>
+          </van-grid>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

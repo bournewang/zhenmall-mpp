@@ -1,0 +1,8 @@
+/* pages/user/sales/index.wxss */
+page {
+  background-color: #f5f5f5;
+}
+.list{
+  padding-bottom: 200rpx;
+  box-sizing: border-box;
+}

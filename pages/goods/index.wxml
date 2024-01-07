@@ -1,0 +1,46 @@
+<!--pages/goods/index.wxml-->
+<swiper class="goodsimgs" indicator-dots="true" autoplay="true" interval="3000" duration="200">
+  <swiper-item wx:for="{{detail.imgs}}" wx:key="index">
+    <image src="{{item}}" mode="aspectFill"></image>
+  </swiper-item>
+</swiper>
+<view class="name ellipsis-2 "> {{detail.name}}</view>
+<view class="price">￥{{detail.price}} <view class="old-price">￥{{detail.price_ori}}</view>
+</view>
+<!-- <van-cell title="选择规格" is-link value="" /> -->
+
+<view class="comments">
+  <van-cell title="评价({{commentTotal>999?'999+':commentTotal}})" is-link value="查看全部" border="{{false}}" url="/pages/goods/comments/list?id={{id}}"></van-cell>
+  <view wx:for="{{comments}}" wx:key="id" wx:for-item="comment" class="comment-item">
+    <view class="info">
+      <view class="user">
+        <image src="{{comment.user_img}}"></image>
+        <text class="ellipsis">{{comment.nickname}}</text>
+        <van-rate size="30rpx" class="rate" value="{{ comment.rating }}" readonly />
+      </view>
+      <view class="time">{{comment.created_at}}</view>
+    </view>
+    <view class="content">
+      {{comment.comment}}
+    </view>
+    <view class="imgs" wx:if="{{comment.imgs.thumb.length}}">
+      <image class="img" wx:for="{{comment.imgs.thumb}}" wx:key="*this" wx:for-index="CMII" src="{{item}}" bindtap="previewImage" data-index="{{CMII}}" data-cindex="{{index}}"></image>
+    </view>
+  </view>
+
+</view>
+
+<!-- <pendant type="{{type}}" custom-params="{{customParams}}" close-picture-in-picture-mode="{{closePictureInPictureMode}}"></pendant> -->
+
+<view class="detail-images">
+  <view class="title">商品详情</view>
+  <image wx:for="{{detail.details}}" wx:key="*this" src="{{item}}" mode="widthFix"></image>
+</view>
+
+<van-goods-action>
+  <van-goods-action-icon icon="chat-o" text="客服" open-type="contact" />
+  <van-goods-action-icon icon="cart-o" text="购物车" link-type="switchTab" url="/pages/cart/index" />
+  <!-- <van-goods-action-icon icon="shop-o" text="店铺" /> -->
+  <van-goods-action-button  text="加入购物" type="warning" bind:click="addCart" />
+  <van-goods-action-button text="立即购买" bind:click="onClickButton" />
+</van-goods-action>

@@ -1,0 +1,147 @@
+<!--pages/order/detail.wxml-->
+<view class="status">
+  <!-- <view class="thm" wx:if="{{order.code && order.type===2 && (order.status === 1 || order.status === 2)}}">提货码: <text>{{order.code}}</text></view> -->
+  <button class="kf" bindtap="openWorkWx" open-type="contact">
+    <image src="/static/icons/kf.png"></image>客服
+  </button>
+  <view class='desc' style="font-weight: bold;font-size: 28rpx;">订单编号: {{order.order_no}} </view>
+
+  <view class='title-d'>{{order.status_label}}</view>
+
+</view>
+<view class="express">
+  <van-cell-group wx:if="{{order.waybill_number}}" inset>
+    <van-cell size="large" is-link url="/pages/order/express/index?id={{order.id}}" title="物流状态" value="{{order.ship_status_label||order.status_label}}" />
+
+    <van-cell title="物流单号"  is-link url="/pages/order/express/index?id={{order.id}}"  value="{{order.waybill_number}}" />
+    <van-cell title="物流公司"   is-link url="/pages/order/express/index?id={{order.id}}" value="{{order.logistic_name}}" />
+  </van-cell-group>
+</view>
+
+<view class="order">
+  <view class="gwmx">购物明细</view>
+  <van-card wx:for="{{order.goods}}" wx:key="index" num="{{item.pivot_quantity}}" price="{{item.price}}" desc="" title="{{item.name}}" thumb="{{ item.thumb||'/static/images/search_no.png' }}" thumb-link="/pages/goods/index?id={{item.id}}" />
+  <!-- <view class="goods" wx:for="{{order.goods}}" wx:key="{{item.id}}">
+    <view class="name">
+      <view class="mingzi">{{item.name}}</view>
+      <view class="guige"></view>
+    </view>
+    <view class="num">x{{item.pivot_quantity}}</view>
+    <view class="amount">￥ {{item.pivot_subtotal}}</view>
+  </view> -->
+  <!-- <view class="goods">
+    <view class="name">
+      <view class="mingzi"></view>
+    </view>
+    <view class="heji">共计:￥
+      <text>{{order.amount}}</text>
+    </view>
+  </view> -->
+</view>
+<view class="other">
+  <!-- <view class="o-item">
+    <view>配送</view>
+    <view>￥{{order.type===1?order.fee:0}}</view>
+  </view> -->
+  <!-- 
+  <view class="o-item" wx:if="{{order.packFee}}">
+    <view>包装</view>
+    <view>￥{{order.packFee}}</view>
+  </view>
+   <view class="o-item">
+    <view>满减</view>
+    <view>-￥{{order.manAmount}}</view>
+  </view> -->
+  <!-- <view class="o-item">
+    <view>优惠券</view>
+    <view class="fushu">-￥{{order.couponAmount}}</view>
+  </view> -->
+  <view class="o-item">
+    <view>共计</view>
+    <view class="shifu">￥{{order.amount}}</view>
+  </view>
+</view>
+<view class="line"></view>
+<view class="other">
+  <view class="o-item">
+    <view>下单门店</view>
+    <view>{{order.store_id}}</view>
+  </view>
+  <view class="o-item">
+    <view>下单时间</view>
+    <view>{{order.created_at}}</view>
+  </view>
+
+  <view class="o-item">
+    <view>订单编号</view>
+    <view>{{order.order_no}}</view>
+  </view>
+  <view class="o-item">
+    <view>配送地址</view>
+    <view class="addr">{{order.address}}
+    </view>
+  </view>
+  <view class="o-item">
+    <view></view>
+    <view>{{order.contact}} {{order.mobile}}</view>
+  </view>
+  <view wx:if="{{order.remark}}" class="o-item">
+    <view>备注</view>
+    <view>{{order.remark}}</view>
+  </view>
+
+</view>
+
+<view class="bottom" wx:if="{{order.status == 'created'}}" bindtap="payAgain">
+  <view class="red-btn">去支付</view>
+</view>
+<view class="bottom" wx:if="{{order.status == 'shipped'}}" bindtap="receive">
+  <view class="red-btn">确认收货</view>
+</view>
+
+<view class="bottom" wx:if="{{order.status == 'complete'}}" bindtap="toComment">
+  <view class="red-btn">去评价</view>
+</view>
+<view class="bottom" wx:if="{{order.status == 'reviewed'}}" bindtap="toSeeComment">
+  <view class="red-btn">查看我的评价</view>
+</view>
+<!-- <view class="bottom" wx:if="{{order.status >= 1 && order.realAmount > 0 && !order.refundStatus}}" bindtap="toRefuse">
+  申请退款
+</view> -->
+<!-- 
+<view class="detail-card " data-id="bbbb" hidden="{{!showCard}}">
+  <view class="card bianda" data-id="dddd">
+    <view class="image">
+      <image src="{{shareInfo.image}}" mode=''></image>
+    </view>
+    <view class="title">{{shareInfo.title}}</view>
+    <view class="title2">{{shareInfo.subTitle}}</view>
+    <view class="share-btns">
+      <button open-type='share' class="to-share">分享领券</button>
+    </view>
+    <view class='close' bindtap='cancelShare'>
+      <image src="/static/common/close.png"></image>
+    </view>
+  </view>
+</view> -->
+<!-- 
+<view class="coupon-card " hidden="{{!orderCoupon}}">
+  <view class="card bianda">
+    <image class="bg" src="/static/common/tankuang.png"></image>
+    <view class="total">{{lan.replace(__['恭喜您获得{%s}张优惠券'],1)}}</view>
+    <view class="price" wx-if="{{orderCoupon.category!==2}}">
+      <text>￥</text>
+      <text class="p">{{orderCoupon.price}}</text>
+    </view>
+    <view class="price" wx-if="{{orderCoupon.category===2}}">
+      <text class="p">{{orderCoupon.discount}}</text>
+      <text>折</text>
+    </view>
+    <view class="name-time">
+      <view class="name">{{orderCoupon.name}}</view>
+      <view class="time">有效期至 :</view>
+      <view class="time">{{orderCoupon.endTime}}</view>
+    </view>
+    <view class="lqck" bindtap="lqck">领取查看</view>
+  </view>
+</view> -->

@@ -1,0 +1,266 @@
+/* pages/order/ready.wxss */
+
+.address {
+  display: flex;
+  width: 750rpx;
+  box-sizing: border-box;
+  padding: 20rpx 35rpx;
+  border-bottom: 1px solid #eee;
+  justify-content: space-between;
+}
+
+.address .content {
+  /* width: 480rpx; */
+  width: 100%;
+}
+
+.content .choose-address {
+  color: #e62129;
+  font-size: 28rpx;
+  height: 68rpx;
+  line-height: 68rpx;
+}
+
+.content .ssq {
+  width: 480rpx;
+  font-size: 28rpx;
+}
+
+.content .detail {
+  margin-top: 20rpx;
+  color: #999;
+  font-size: 24rpx;
+  line-height: 40rpx;
+  height: 40rpx;
+  display: flex;
+  align-items: center;
+}
+
+.content .detail image {
+  width: 30rpx;
+  height: 30rpx;
+  display: inline-block;
+  margin-right: 10rpx;
+}
+
+.switch {
+  width: 177rpx;
+  display: flex;
+  box-sizing: border-box;
+  border-radius: 50px;
+  border: 1px solid #f00;
+  height: 68rpx;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.order {
+  box-sizing: border-box;
+  padding: 30rpx;
+  width: 100%;
+  margin-top: 8rpx;
+  border-bottom: 1px solid #eee;
+}
+
+.order .gwmx {
+  text-align: center;
+  margin-bottom: 30rpx;
+  font-size: 26rpx;
+}
+
+.order .goods {
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  align-items: center;
+  margin-top: 30rpx;
+  font-size: 26rpx;
+  color: #0f0f0f;
+}
+
+.order .goods .name {
+  width: 400rpx;
+}
+
+.order .goods .name .mingzi {}
+
+.order .goods .name .guige {
+  font-size: 24rpx;
+  color: #999;
+  margin-top: 18rpx;
+}
+
+.order .goods .heji {
+  font-size: 20rpx;
+}
+
+.order .goods .heji text {
+  font-size: 26rpx;
+}
+
+.order .goods .youhuiquan {
+  color: #bd0000;
+  display: flex;
+  align-items: center;
+}
+
+.order .goods .youhuiquan image {
+  width: 80rpx;
+  height: 80rpx;
+}
+
+.remark {
+  box-sizing: border-box;
+  padding: 20rpx;
+  z-index: -1;
+}
+
+.remark .title {
+  box-sizing: border-box;
+  font-size: 26rpx;
+}
+
+.remark .input {
+  margin-top: 30rpx;
+  background-color: #f8f8f8;
+  width: 100%;
+  /* margin-bottom: 100rpx; */
+  border-radius: 5px;
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+
+.bottom {
+  position: fixed;
+  width: 100%;
+  height: 98rpx;
+  bottom: 0;
+  background-color: #fff;
+  display: flex;
+  /* border-top: 1px solid #eee; */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.bottom .submit {
+  background-color: red;
+  color: #fff;
+  width: 270rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.bottom .submit.disabled {
+  background-color: #999;
+}
+
+.bottom .kongbai {
+  width: 480rpx;
+  display: flex;
+  align-items: baseline;
+}
+
+.bottom .kongbai .lb {
+  margin-left: 30rpx;
+  line-height: 100rpx;
+  color: #0f0f0f;
+  font-size: 26rpx;
+}
+
+.bottom .kongbai .dw {
+  color: #db0000;
+  margin-left: 20rpx;
+  font-size: 26rpx;
+}
+
+.bottom .kongbai .count {
+  color: #db0000;
+  font-size: 48rpx;
+  width: 200rpx;
+}
+
+.other {
+  box-sizing: border-box;
+  margin-top: 30rpx;
+  font-size: 26rpx;
+  padding: 0 30rpx;
+}
+
+.other .o-item {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 36rpx;
+  align-items: center;
+}
+
+.other .o-item .disable {
+  color: #999;
+}
+
+.other .o-item .fushu {
+  color: #db0000;
+}
+
+.other .o-item .shifu {
+  font-size: 36rpx;
+  color: #0f0f0f;
+  font-weight: bold;
+}
+
+.other .o-item .cfqb {
+  background-color: #db0000;
+  color: #fff;
+  font-size: 20rpx;
+  padding: 0 10rpx;
+  height: 36rpx;
+  line-height: 36rpx;
+  text-align: center;
+  display: inline-block;
+  border-radius: 2px;
+  margin-left: 10rpx;
+}
+
+.cfqb.h {}
+
+.pack-action {
+  display: flex;
+  align-items: center;
+
+
+}
+
+.dec {
+  width: 40rpx;
+  height: 40rpx;
+  font-size: 43rpx;
+  line-height: 34rpx;
+  font-weight: bold;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.pack-num {
+  height: 40rpx;
+  line-height: 40rpx;
+  width: 60rpx;
+  text-align: center;
+}
+
+.use-balance{
+  display: flex;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+  align-items: center;
+  /* justify-content: right; */
+  flex-direction: row-reverse;
+  font-size: 28rpx;
+}
+.use-balance .label{
+
+}
+.use-balance .checkbox{
+
+}

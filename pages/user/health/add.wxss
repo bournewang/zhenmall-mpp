@@ -1,0 +1,63 @@
+/* pages/user/store/add.wxss */
+.uploader {
+  margin-top: 10rpx;
+}
+
+.form {
+  padding-bottom: 50rpx;
+}
+
+.btn {
+  width: 100%;
+  text-align: center;
+  border-radius: 50px;
+  background-color: #db0000;
+  color: #fff;
+  padding: 20rpx 0;
+}
+
+.error {
+  color: #ee0a24;
+}
+
+
+.imageList {
+  height: auto;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  padding: 10rpx;
+}
+
+.imageList .commentImage {
+  width: 200rpx;
+  height: 200rpx;
+  position: relative;
+  /* margin: 30rpx 0 0 30rpx; */
+}
+.imageList .commentImage .close{
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: block;
+  background-color: #888;
+  color: #fff;
+  border-radius: 50%;
+  width: 30rpx;
+  height: 30rpx;
+  line-height: 30rpx;
+  font-size: 30rpx;
+  text-align: center;
+}
+.imageList .commentImage+.commentImage {
+  margin-left: 20rpx;
+}
+.fix-placeholder{
+  padding: 5rpx 10rpx;
+}
+textarea{
+  background-color: #eee;
+  padding: 10rpx;
+  width: 100%;
+  box-sizing: border-box;
+}

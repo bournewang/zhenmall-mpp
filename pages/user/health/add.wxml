@@ -1,0 +1,29 @@
+<!--pages/user/store/add.wxml-->
+<view class="form">
+  <van-cell-group>
+    <!-- <van-field error-message="{{errors.detail?'请输入':''}}" type="textarea" autosize input-align="left" data-key="detail" label="健康状况描述及问题" placeholder="请输入健康状况描述及问题" value="{{form.detail}}" bind:input="onChange" /> -->
+    <van-cell >
+      <view slot="title" class="item">
+        <view class="label {{errors.imgs&&'error'}}">健康状况描述及问题</view>
+        <textarea data-key="detail" value="{{form.detail}}" placeholder="请输入健康状况描述及问题" bindinput="onInputChange"></textarea>
+      </view>
+    </van-cell>
+    <van-cell>
+      <view slot="title">
+        <view class="label {{errors.imgs&&'error'}}">病例和检验报告(5张)</view>
+        <view class="uploader">
+          <van-uploader max-count="5" multiple="{{true}}" file-list="{{ fileList.imgs }}" bind:after-read="afterRead" data-key="imgs" bind:delete="delFile" />
+          <!-- <view class="imageList">
+            <image wx:if="{{form.imgs.length}}" wx:for-item="pItem" wx:for-index="pI" wx:for="{{form.imgs}}" wx:key="pI" class="commentImage" src="{{pItem}}">
+              <view class="close" bindtap="close" data-index="{{index}}">x</view>
+            </image>
+            <image class="commentImage" wx:if="{{!form.imgs || form.imgs.length<6}}" data-index="{{index}}" bindtap='addImage' src="/static/images/addImage.png"></image>
+          </view> -->
+        </view>
+      </view>
+    </van-cell>
+  </van-cell-group>
+  <view class="btn" bindtap="submit">
+    提交
+  </view>
+</view>

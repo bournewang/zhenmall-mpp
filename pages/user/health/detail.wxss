@@ -1,0 +1,39 @@
+/* pages/user/store/memeber.wxss */
+page {
+  /* padding: 30rpx; */
+  background-color: #f5f5f5;
+
+}
+
+.list {
+  padding-bottom: 50rpx;
+}
+
+.list .van-cell-group__title {
+  font-size: 32rpx;
+  /* font-weight: bold; */
+}
+
+.avatar {
+  width: 60rpx;
+  height: 60rpx;
+
+}
+
+.btn {
+  padding: 20rpx;
+
+}
+
+.kf {
+  background-color: #db0000;
+  color: #fff;
+  border-radius: 50px;
+}
+
+.images image{
+  width: 100rpx;
+  height: 100rpx;
+  display: inline-block;
+  margin-right: 10rpx;
+}

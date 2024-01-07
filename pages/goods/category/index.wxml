@@ -1,0 +1,23 @@
+<view class="container">
+  <!-- <view class="cate-nav">
+    <scroll-view scroll-x="true" class="cate-nav-body" style="width: 750rpx;" scroll-left="{{scrollLeft}}" scroll-into-view="view{{scrollIntoView}}">
+      <view class="item {{ category_id == 0 ? 'active' : ''}}" data-id="{{0}}" bindtap="switchCate">
+        <view class="name">全部</view>
+      </view>
+      <view wx:for="{{categoryList}}" class="item {{ category_id == item.id ? 'active' : ''}}" data-id="{{item.id}}" bindtap="switchCate" wx:key="index">
+        <view class="name">{{item.name}}</view>
+      </view>
+    </scroll-view>
+  </view> -->
+  <scroll-view class="category-list" scroll-y="true" scroll-top="{{scrollTop}}" style="min-height:100vh">
+    <view class="cate-item">
+      <view class="b">
+        <navigator hover-class="none" class="item" url="/pages/goods/index?id={{item.id}}" wx:for="{{list}}" wx:key="index">
+          <image class="img" src="{{item.thumb||'/static/images/search_no.png'}}" background-size="cover"></image>
+          <view class="name">{{item.name}}</view>
+          <view class="price">￥{{item.price}}</view>
+        </navigator>
+      </view>
+    </view>
+  </scroll-view>
+</view>

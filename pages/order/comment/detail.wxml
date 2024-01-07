@@ -1,0 +1,18 @@
+<!--pages/order/comment/add.wxml-->
+<van-collapse value="{{ activeNames }}" bind:change="onChange">
+  <van-collapse-item wx:for="{{order.goods}}" wx:key="index" title="{{item.name}}" name="{{index}}">
+    <van-card num="{{item.pivot_quantity}}" price="{{item.price}}" desc="" title="{{item.name}}" thumb="{{ item.thumb||'/static/images/search_no.png' }}" />
+  </van-collapse-item>
+</van-collapse>
+<view class="con">
+  <text>评分: </text>
+  <van-rate value="{{ form.rating }}" readonly />
+  <view class="input-box">
+    <textarea class="content" disabled value="{{form.comment}}" data-index="{{index}}" />
+  </view>
+
+  <view class="imageList">
+    <image wx:if="{{form.imgs.length}}" wx:for-item="pItem" wx:for-index="pI" wx:for="{{form.imgs}}" wx:key="pI" class="commentImage" src="{{pItem}}"></image>
+
+  </view>
+</view>

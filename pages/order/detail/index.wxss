@@ -1,0 +1,466 @@
+/* pages/order/detail.wxss */
+
+.order {
+  box-sizing: border-box;
+  padding: 30rpx;
+  width: 100%;
+  margin-top: 30rpx;
+  border-bottom: 1px solid #eee;
+}
+
+.order .gwmx {
+  text-align: center;
+  margin-bottom: 30rpx;
+  font-size: 26rpx;
+}
+
+.order .goods {
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  align-items: center;
+  margin-top: 30rpx;
+  font-size: 26rpx;
+  color: #0f0f0f;
+}
+
+.order .goods .name {
+  width: 400rpx;
+}
+
+.order .goods .name .mingzi {}
+
+.order .goods .name .guige {
+  font-size: 24rpx;
+  color: #999;
+  margin-top: 18rpx;
+}
+
+.order .goods .heji {
+  font-size: 20rpx;
+}
+
+.order .goods .heji text {
+  font-size: 26rpx;
+}
+
+.order .goods .youhuiquan {
+  color: #bd0000;
+  display: flex;
+  align-items: center;
+}
+
+.order .goods .youhuiquan image {
+  width: 80rpx;
+  height: 80rpx;
+}
+
+.remark {
+  box-sizing: border-box;
+  padding: 20rpx;
+}
+
+.remark .title {
+  box-sizing: border-box;
+}
+
+.remark .input {
+  margin-top: 30rpx;
+  background-color: #eee;
+  width: 100%;
+  margin-bottom: 20rpx;
+}
+
+.other .addr {
+  width: 480rpx;
+  text-align: right;
+}
+
+.other {
+  box-sizing: border-box;
+  font-size: 26rpx;
+  padding: 30rpx;
+  margin-bottom: 20rpx;
+}
+
+.other .o-item {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 36rpx;
+}
+
+.other .o-item .disable {
+  color: #999;
+}
+
+.other .o-item .fushu {
+  /* color: #db0000; */
+}
+
+.other .o-item .shifu {
+  font-size: 36rpx;
+  color: #0f0f0f;
+}
+
+.other .o-item .cfqb {
+  background-color: #db0000;
+  color: #fff;
+  font-size: 20rpx;
+  width: 128rpx;
+  height: 36rpx;
+  line-height: 36rpx;
+  text-align: center;
+  display: inline-block;
+  border-radius: 2px;
+}
+
+.status {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 750rpx;
+  flex-direction: column;
+  position: relative;
+}
+
+.status .thm {
+  position: absolute;
+  top: 50rpx;
+  left: 30rpx;
+  font-size: 28rpx;
+  height: 38rpx;
+  line-height: 38rpx;
+}
+
+.status .thm text {
+  font-weight: bold;
+}
+button.kf{
+  background-color: transparent;
+}
+.status .kf {
+  position: absolute;
+  right: 30rpx;
+  top: 70rpx;
+  font-size: 28rpx;
+  color: #db0000;
+  line-height: 38rpx;
+  height: 38rpx;
+}
+
+.status .kf image {
+  width: 32rpx;
+  height: 28rpx;
+  margin-right: 2rpx;
+}
+
+.status .title {
+  font-size: 38rpx;
+  margin-top: 50rpx;
+  font-weight: bold;
+}
+
+.status .title-d {
+  font-size: 34rpx;
+  margin-top: 20rpx;
+  font-weight: bold;
+}
+
+.status .desc {
+  font-size: 26rpx;
+  margin-top: 20rpx;
+}
+
+.bottom {
+  /* height: 98rpx; */
+  width: 750rpx;
+  text-align: center;
+  line-height: 98rpx;
+  font-size: 26rpx;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 99;
+  color: #db0000;
+  background-color: #fff;
+  box-shadow: 0 5rpx 6rpx #000;
+  padding-bottom: env(safe-area-inset-bottom);
+  box-sizing: border-box;
+  display: inline-block;
+}
+
+
+/* .red-btn {
+  background-color: #db0000;
+  color: #fff;
+  border-radius: 50rpx;
+  width: 100%;
+  font-size: 36rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+} */
+
+
+.detail-card {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 750rpx;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.detail-card .card {
+  width: 750rpx;
+  height: 784rpx;
+  overflow: hidden;
+  position: relative;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column;
+  border-radius: 15rpx;
+}
+
+.detail-card .card .image {
+  width: 500rpx;
+  display: flex;
+  background: #fff;
+  border-top-left-radius: 15rpx;
+  border-top-right-radius: 15rpx;
+}
+
+.detail-card .card .image image {
+  width: 500rpx;
+  height: 400rpx;
+  border-top-left-radius: 15rpx;
+  border-top-right-radius: 15rpx;
+}
+
+.detail-card .card .title {
+  width: 500rpx;
+  font-size: 28rpx;
+  font-weight: bold;
+  line-height: 40rpx;
+  height: 40rpx;
+  background-color: #fff;
+  text-align: center;
+  padding-bottom: 15rpx;
+  padding-top: 15rpx;
+  margin-top: -1rpx;
+}
+
+.detail-card .card .title2 {
+  margin-top: -1rpx;
+  text-align: center;
+  width: 500rpx;
+  font-size: 26rpx;
+  line-height: 60rpx;
+  height: 60rpx;
+  background-color: #fff;
+  border-bottom: 1rpx solid #eee;
+  padding-bottom: 15rpx;
+
+}
+
+.share-btns {
+  background-color: #fff;
+  display: flex;
+  width: 500rpx;
+  height: 95rpx;
+  align-items: center;
+  font-weight: bold;
+  border-bottom-left-radius: 15rpx;
+  border-bottom-right-radius: 15rpx;
+  box-sizing: border-box;
+}
+
+.share-btns .cancel {
+  width: 246rpx;
+  text-align: center;
+  font-size: 30rpx;
+  border-right: 1rpx #eee solid;
+}
+
+.share-btns .to-share {
+  font-size: 26rpx;
+  color: #fff;
+  background-color: #bd0000;
+  height: 56rpx;
+  line-height: 26rpx;
+  width: 180rpx;
+  text-align: center;
+  border-radius: 25px;
+  box-sizing: border-box;
+  padding: 15rpx;
+  font-weight: normal;
+}
+
+button::after,
+button::before {
+  border: none;
+  display: none;
+}
+
+.close {
+  margin-top: 30rpx;
+  color: #fff;
+  border: 1px #fff solid;
+  border-radius: 50%;
+  width: 50rpx;
+  height: 50rpx;
+  text-align: center;
+  line-height: 50rpx;
+  font-size: 50rpx;
+}
+
+.close image {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+
+.coupon-card {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 750rpx;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.coupon-card .card {
+  width: 750rpx;
+  height: 784rpx;
+  overflow: hidden;
+  position: relative;
+  z-index: 999;
+}
+
+.coupon-card .card .bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 750rpx;
+  height: 784rpx;
+}
+
+.coupon-card .card .total {
+  position: absolute;
+  width: 750rpx;
+  text-align: center;
+  color: #7d582c;
+  font-size: 35rpx;
+  top: 270rpx;
+}
+
+.coupon-card .card .price {
+  position: absolute;
+  text-align: center;
+  color: #dcb17e;
+  font-size: 54rpx;
+  top: 394rpx;
+  left: 122rpx;
+}
+
+.coupon-card .card .price .p {
+  font-size: 88rpx;
+}
+
+.coupon-card .card .name-time {
+  position: absolute;
+  top: 414rpx;
+  left: 334rpx;
+}
+
+.coupon-card .card .name-time .name {
+  font-size: 36rpx;
+  color: #724d22;
+}
+
+.coupon-card .card .name-time .time {
+  color: #b99266;
+  font-size: 24rpx;
+  margin-top: 8rpx;
+}
+
+.coupon-card .card .lqck {
+  position: absolute;
+  text-align: center;
+  bottom: 0;
+  width: 750rpx;
+  height: 90rpx;
+  color: rgba(255, 255, 255, 0);
+}
+
+
+.ready-order {
+  position: relative;
+  overflow: visible !important;
+
+}
+
+.ready-order .midd-scroll {}
+
+.scr-con {
+  display: flex;
+  min-height: 300rpx;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  width: 600rpx;
+  background-color: #fff;
+  border-radius: 15px;
+  padding: 10rpx;
+  box-sizing: border-box;
+}
+
+.ready-item {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 25rpx;
+  width: 100%;
+  height: 120rpx;
+  align-items: center;
+  padding: 35rpx;
+  /* border:  1px solid #db0000; */
+  box-sizing: border-box;
+  border-radius: 15rpx;
+  background-color: #fff;
+}
+
+.ready-item .ready-o-name {}
+
+.ready-item .ready-o-btn {
+  background-color: #db0000;
+  color: #fff;
+  box-sizing: border-box;
+  padding: 5rpx 30rpx;
+  border-radius: 5px;
+}
+
+.ready-order .lqck {
+  bottom: -130rpx;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  height: 90rpx;
+  color: #fff;
+  z-index: 99;
+  font-weight: bold;
+}
+.express{
+  margin-top: 30rpx;
+
+}
+.express .van-cell{
+  background-color: #fafafa;
+}

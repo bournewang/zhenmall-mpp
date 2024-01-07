@@ -1,0 +1,63 @@
+<!--index.wxml-->
+<view class="index-page">
+  <view wx:for="{{components}}" wx:key="index" class="component">
+    <my-title wx:if="{{item.type==='title'}}" options="{{item.options}}"></my-title>
+    <my-carousel wx:if="{{item.type==='carousel'}}" options="{{item.options}}"></my-carousel>
+    <view wx:if="{{item.type==='custom' && redpacketsCount>0}}" class="redpack-tips" bind:tap="showbtn">
+      你有 {{redpacketsCount}} 个红包可领！
+    </view>
+    <van-grid wx:if="{{item.type==='goods'}}" column-num="2" gutter="{{ 10 }}" class="van-goods">
+      <van-grid-item url="/pages/goods/index?id={{gItem.id}}" use-slot wx:for="{{item.options.goods }}" wx:key="id" wx:for-item="gItem" wx:for-index="gIndex" content-class="van-grid-item">
+        <image class="thumb" mode="aspectFill" src="{{gItem.thumb||'/static/images/search_no.png'}}" />
+        <view class="name ellipsis-2">{{gItem.name}}</view>
+        <view class="price">￥{{gItem.price}}
+          <view class="old-price">￥{{gItem.price_ori}}</view>
+          <van-button type="danger" class="buy" size="mini" catchtap="addCart" data-id="{{gItem.id}}">购买</van-button>
+        </view>
+      </van-grid-item>
+    </van-grid>
+  </view>
+</view>
+
+
+<view class="rbag_model" wx:if="{{redpacketStep === 1}}">
+  <view class="rbag_con hidden">
+    <view class="rbag_top">
+      <view class="rbag_top_info">
+        <!-- <image class="rbag_logo" src="/static/icon/logo.jpg" mode=""></image> -->
+        <view class="rbag_logo"></view>
+        <view class="app_name">恭喜发财</view>
+        <view class="rbag_tips">送您一个红包</view>
+      </view>
+    </view>
+    <view class="open_rbag_btn {{redpacketBtnClass}}" bind:tap="openbtn">開</view>
+  </view>
+  <view class="rbag_con">
+    <view class="hide_btn" bind:tap="closebtn">
+      <icon type="cancel" color="#fbd977" size="28" />
+    </view>
+  </view>
+</view>
+
+<view class="open_rbag_model" wx:if="{{redpacketStep === 2}}">
+  <image class="rbag_conbg" src="/static/icons/openrbag.png"></image>
+  <view class="rbag_conbg open_rbag_con">
+    <view class="open_title">— 恭喜您获得 —</view>
+    <view class="rbag_detail">
+      <view class="open_money">
+        <view class="amount">{{redpacketAmount}}</view>
+        <view class="danwei">元</view>
+      </view>
+      <view class="open_tips">已存入钱包，可直接体现</view>
+    </view>
+    <view class="lookbag_box">
+      <view class="lookbag_btn">
+        <!-- <view class="text" bind:tap="continuebtn">继续开</view> -->
+        <view class="text" bind:tap="closebtn">关闭</view>
+      </view>
+    </view>
+    <!-- <view class="hide_btn" bind:tap="hideopenbtn()">
+      <icon type="cancel" color="#fbd977" size="28" />
+    </view> -->
+  </view>
+</view>

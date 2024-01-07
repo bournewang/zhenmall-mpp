@@ -1,0 +1,28 @@
+{
+  "name": "huyan-mapp",
+  "version": "1.0.0",
+  "description": "huyan",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "beforeCompile": "node ./bin/test.js",
+    "testSass": "webpack --config sass.config.js --watch",
+    "gitpush": "git add * && git commit -m \"auto commit\" && git push"
+  },
+  "author": "Ljw",
+  "license": "ISC",
+  "dependencies": {
+    "@vant/weapp": "^1.10.0"
+  },
+  "devDependencies": {
+    "css-loader": "^3.4.2",
+    "mini-css-extract-plugin": "^0.9.0",
+    "sass": "^1.43.4",
+    "optimize-css-assets-webpack-plugin": "^6.0.1",
+    "sass-loader": "^8.0.2",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11",
+    "webpack-fix-style-only-entries": "^0.2.1",
+    "webpack-glob-entry": "^2.1.1"
+  }
+}

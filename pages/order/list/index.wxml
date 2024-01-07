@@ -1,0 +1,37 @@
+<van-tabs active="{{ active }}" bind:change="onChange" animated sticky>
+  <van-tab wx:for="{{texts}}" wx:for-index="ti" wx:for-item="text" wx:key="text" title="{{text}}{{orderCount[statuses[ti]]?'('+orderCount[statuses[ti]]+')':''}}">
+    <view wx:if="{{lists[ti]&&lists[ti].length}}" class="list">
+      <van-cell-group wx:for="{{lists[ti]}}" wx:for-item="order" wx:for-index="oi" wx:key="oi" class="item">
+        <van-cell title="订单编号: {{order.order_no}}" title-class="order_no" value="{{order.status_label}}" url="/pages/order/detail/index?id={{order.id}}" border="{{!order.waybill_number}}" size="large">
+        </van-cell>
+        <van-cell custom-class="waybill" wx:if="{{order.waybill_number}}" title="物流编号: {{order.waybill_number}}" title-class="order_no" value="{{order.ship_status_label}}" url="/pages/order/detail/index?id={{order.id}}">
+        </van-cell>
+        <van-cell title="" value="" use-label-slot url="/pages/order/detail/index?id={{order.id}}">
+          <view slot="label">
+            <view class="goods">
+              <van-card wx:for="{{order.goods}}" wx:key="index" num="{{item.pivot_quantity}}" price="{{item.price}}" desc="" title="{{item.name}}" thumb="{{ item.thumb||'/static/images/search_no.png' }}" />
+            </view>
+            <view class="amount">总价: ￥{{order.amount}}</view>
+            <view class="actions">
+              <van-button wx:if="{{order.status==='created'}}" type="danger" size="small" catchtap="payAgain" data-id="{{order.id}}">支付</van-button>
+              <van-button wx:if="{{order.status==='complete'}}" plain type="danger" size="small" catchtap="toComment" data-id="{{order.id}}">评价</van-button>
+              <van-button wx:if="{{order.status==='reviewed'}}" plain type="danger" size="small" catchtap="toShowComment" data-id="{{order.id}}">我的评价</van-button>
+            </view>
+          </view>
+        </van-cell>
+      </van-cell-group>
+    </view>
+    <view wx:else class="empty">
+      暂时没有订单
+    </view>
+
+  </van-tab>
+  <!-- <van-tab title="待付款">
+    <view class="list">
+
+    </view>
+  </van-tab>
+  <van-tab title="待发货">内容 2</van-tab>
+  <van-tab title="待收货">内容 3</van-tab>
+  <van-tab title="待评价">内容 4</van-tab> -->
+</van-tabs>

@@ -1,0 +1,51 @@
+
+<!--pages/profile/address/index.wxml-->
+<view class="scroll">
+  <movable-area wx:for="{{list}}" wx:key="index" class="area">
+    <movable-view class="area-view" direction="horizontal" bindchange="move" damping="100" x="{{item.x}}" y="{{item.y}}" data-index="{{index}}">
+      <view class="item flex">
+        <view class="left" data-index="{{index}}" bindtap="chooseAddress">
+          <view class="one flex">
+            <view class="name ">{{item.contact}}</view>
+            <view class="mobile ml-20">{{item.mobile}}</view>
+            <view wx:if="{{item.default}}" class="label ml-20">默认</view>
+            <view wx:if="{{item.tag}}" class="label tag ml-20">{{item.tag}}</view>
+          </view>
+          <view class="address">{{item.display_address}}</view>
+        </view>
+        <view class="right">
+          <image wx:if="{{!isChoose}}" src="/static/icons/ico_bj.png" class="edit" bindtap="edit" data-id="{{item.id}}"></image>
+        </view>
+      </view>
+      <view class="del-btn" bindtap="del" data-id="{{item.id}}">删除</view>
+    </movable-view>
+  </movable-area>
+
+
+  <!-- <view wx:if="{{noUseList.length}}" class="no-use-tip">
+    超出配送范围地址
+  </view>
+  <view wx:for="{{noUseList}}" wx:key="index" class="item flex no-use">
+    <view class="left">
+      <view class="one flex">
+        <view class="name ">{{item.name}}</view>
+        <view class="mobile ml-20">{{item.mobile}}</view>
+        <view wx:if="{{item.isDefault}}" class="label ml-20">默认</view>
+        <view class="label tag ml-20">{{item.tag}}</view>
+      </view>
+      <view class="address">{{item.address}}</view>
+    </view>
+    <view class="right">
+      <image src="/static/profile/ico_bj.png" class="edit" bindtap="edit" data-id="{{item.id}}"></image>
+    </view>
+  </view> -->
+
+  <view wx:if="{{!list.length && !noUseList.length}}" class="empty">
+    <view class="empty-image" src="/static/common/no-address.png"></view>
+    <view class="empty-label">写下地址，方便配送</view>
+  </view>
+</view>
+
+<view class="add-btn boxsz">
+  <button class="red-btn" bindtap="newAddress">+新建收货地址</button>
+</view>

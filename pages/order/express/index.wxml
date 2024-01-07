@@ -1,0 +1,11 @@
+<view>
+  <van-cell-group>
+    <van-cell size="large" title="物流状态" value="{{order.ship_status_label||order.status_label}}" />
+    <van-cell title="物流单号" value="{{order.waybill_number}}" />
+    <van-cell title="物流公司" value="{{order.logistic_name}}" />
+  </van-cell-group>
+  <view class="steps">
+    <van-steps steps="{{ steps }}" active="{{ active }}" direction="vertical" active-color="#db0000" />
+  </view>
+
+</view>

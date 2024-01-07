@@ -1,0 +1,20 @@
+<view class="comments">
+  <van-cell title="评价({{commentTotal>999?'999+':commentTotal}})"></van-cell>
+  <view wx:for="{{comments}}" wx:key="id" wx:for-item="comment" class="comment-item">
+    <view class="info">
+      <view class="user">
+        <image src="{{comment.user_img}}"></image>
+        <text class="ellipsis">{{comment.nickname}}</text>
+        <van-rate size="30rpx" class="rate" value="{{ comment.rating }}" readonly />
+      </view>
+      <view class="time">{{comment.created_at}}</view>
+    </view>
+    <view class="content">
+      {{comment.comment}}
+    </view>
+    <view class="imgs" wx:if="{{comment.imgs.thumb&&comment.imgs.thumb.length}}">
+      <image class="img" wx:for="{{comment.imgs.thumb}}" bindtap="previewImage" src="{{item}}" wx:key="*this" wx:for-index="CMII" data-index="{{CMII}}" data-cindex="{{index}}"></image>
+    </view>
+  </view>
+
+</view>

@@ -1,0 +1,70 @@
+/**app.wxss**/
+@font-face {
+  font-family: "ljw-icon";
+  src: url('//at.alicdn.com/t/font_2317833_a41e26tz7lu.ttf') format('truetype')
+}
+
+
+.ljw-icon {
+  font-family: "ljw-icon" !important;
+  font-size: 32rpx;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-copy::before {
+  content: "\e66a";
+}
+
+.icon-menu::before {
+  content: "\e677";
+}
+
+.icon-search::before {
+  content: "\e67d";
+}
+
+.icon-warning::before {
+  content: "\e682";
+}
+
+.icon-zoom-in::before {
+  content: "\e683";
+}
+
+.icon-zoom-out::before {
+  content: "\e684";
+}
+
+.icon-add-bold::before {
+  content: "\e685";
+}
+
+.icon-arrow-left-bold::before {
+  content: "\e686";
+}
+
+.icon-arrow-up-bold::before {
+  content: "\e687";
+}
+
+.icon-close-bold::before {
+  content: "\e688";
+}
+
+.icon-arrow-down-bold::before {
+  content: "\e689";
+}
+
+.icon-minus-bold::before {
+  content: "\e68a";
+}
+
+.icon-arrow-right-bold::before {
+  content: "\e68b";
+}
+
+.icon-favorite:before {
+  content: "\e66f";
+}

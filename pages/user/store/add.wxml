@@ -1,0 +1,79 @@
+<!--pages/user/store/add.wxml-->
+<view class="form">
+  <van-cell-group>
+    <van-cell title="店名">
+      <view class="item ">
+        <input data-key="name" placeholder-class="placeholder {{errors.name&&'error'}}" value="{{form.name}}" placeholder="请输入店名" bindinput="onInputChange"></input>
+      </view>
+    </van-cell>
+    <van-cell title="公司名">
+      <view class="item ">
+        <input data-key="company_name" placeholder-class="placeholder {{errors.company_name&&'error'}}" value="{{form.company_name}}" placeholder="请输入公司名" bindinput="onInputChange"></input>
+      </view>
+    </van-cell>
+    <van-cell title="营业执照号码">
+      <view class="item ">
+        <input data-key="license_no" placeholder-class="placeholder {{errors.license_no&&'error'}}" value="{{form.license_no}}" placeholder="请输入营业执照号码" bindinput="onInputChange"></input>
+      </view>
+    </van-cell>
+    <van-cell title="银行账号">
+      <view class="item ">
+        <input data-key="account_no" placeholder-class="placeholder {{errors.account_no&&'error'}}" value="{{form.account_no}}" placeholder="请输入银行账号" bindinput="onInputChange"></input>
+      </view>
+    </van-cell>
+    <van-cell title="店长姓名">
+      <view class="item ">
+        <input data-key="contact" placeholder-class="placeholder {{errors.contact&&'error'}}" value="{{form.contact}}" placeholder="请输入店长姓名" bindinput="onInputChange"></input>
+      </view>
+    </van-cell>
+    <van-cell title="店长电话">
+      <view class="item ">
+        <input data-key="mobile" placeholder-class="placeholder {{errors.mobile&&'error'}}" value="{{form.mobile}}" placeholder="请输入店长电话" bindinput="onInputChange"></input>
+      </view>
+    </van-cell>
+
+    <van-cell title="省市区" is-link>
+      <picker class="region" mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}" range-key="display">
+        <view wx:if="{{form.province_id}}" class="place picker">
+          <view>{{multiArray[0][multiIndex[0]].display}} {{multiArray[1][multiIndex[1]].display}} {{multiArray[2][multiIndex[2]].display}}</view>
+        </view>
+        <view wx:else class="place">
+          <view class="label {{errors.province_id&&'error'}}">请选择地址</view>
+        </view>
+      </picker>
+    </van-cell>
+    <van-cell title="具体地址">
+      <view class="item ">
+        <input data-key="street" placeholder-class="placeholder {{errors.street&&'error'}}" value="{{form.street}}" placeholder="请输入具体地址" bindinput="onInputChange"></input>
+      </view>
+    </van-cell>
+
+    <van-cell>
+      <view slot="title">
+        <view class="label {{errors.contract&&'error'}}">合同文件(5张)</view>
+        <view class="uploader">
+          <van-uploader max-count="5" multiple="{{true}}" file-list="{{ fileList.contract }}" bind:after-read="afterRead" data-key="contract" bind:delete="delFile" />
+        </view>
+      </view>
+    </van-cell>
+    <van-cell>
+      <view slot="title">
+        <view class="label {{errors.id_card&&'error'}}">店长身份证正反面(2张)</view>
+        <view class="uploader">
+          <van-uploader max-count="2" multiple="{{true}}" file-list="{{ fileList.id_card }}" bind:after-read="afterRead" data-key="id_card" bind:delete="delFile" />
+        </view>
+      </view>
+    </van-cell>
+    <van-cell>
+      <view slot="title">
+        <view class="label {{errors.photo&&'error'}}">门店图片(5张)</view>
+        <view class="uploader">
+          <van-uploader max-count="5" multiple="{{true}}" file-list="{{ fileList.photo }}" bind:after-read="afterRead" data-key="photo" bind:delete="delFile" />
+        </view>
+      </view>
+    </van-cell>
+  </van-cell-group>
+  <view class="btn" bindtap="submit">
+    提交
+  </view>
+</view>

@@ -1,0 +1,21 @@
+<!--pages/user/store/add.wxml-->
+<view class="form">
+
+
+    <textarea  data-key="detail" placeholder="健康状况描述及问题" bindinput="bindInpuntValue" ></textarea>
+    <input  data-key="detail" placeholder="健康状况描述及问题" bindinput="bindInpuntValue" ></input>
+
+      <view >
+        <view class="label {{errors.imgs&&'error'}}">病例和检验报告(5张)</view>
+        <view class="uploader">
+          <view class="imageList">
+            <image wx:if="{{form.imgs.length}}" wx:for-item="pItem" wx:for-index="pI" wx:for="{{form.imgs}}" wx:key="pI" class="commentImage" src="{{pItem}}">
+              <view class="close" bindtap="close" data-index="{{index}}">x</view>
+            </image>
+            <image class="commentImage" wx:if="{{!form.imgs || form.imgs.length<6}}" data-index="{{index}}" bindtap='addImage' src="/static/images/addImage.png"></image>
+          </view>
+        </view>
+      </view>
+
+
+</view>

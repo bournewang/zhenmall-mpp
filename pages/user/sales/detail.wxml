@@ -1,0 +1,53 @@
+<!--pages/user/store/memeber.wxml-->
+<!-- <view class="list">
+
+  <van-cell-group wx:for="{{list}}" wx:key="index" class="group" >
+    
+    <block wx:for="{{titles}}" wx:for-item="title" wx:for-index="titleIndex" wx:key="*this">
+      <van-cell wx:if="{{titleIndex==='avatar'}}" center title="{{title}}">
+        <image class="avatar" src="{{item[titleIndex]||'/static/images/search_no.png'}}"></image>
+      </van-cell>
+      <van-cell wx:else title="{{title}}" value="{{item[titleIndex]||''}}" />
+    </block>
+  </van-cell-group>
+
+</view> -->
+
+<!--pages/user/store/memeber.wxml-->
+<view class="list">
+
+  <!-- <van-cell-group wx:for="{{list}}" bindtap="toDetail" data-id="{{item.id}}" wx:key="index" class="group">
+
+  <block wx:for="{{titles}}" wx:for-item="title" wx:for-index="titleIndex" wx:key="*this">
+    <van-cell wx:if="{{titleIndex==='avatar'}}" center title="{{title}}">
+      <image class="avatar" src="{{item[titleIndex]||'/static/images/search_no.png'}}"></image>
+    </van-cell>
+    <van-cell wx:else title="{{title}}" value="{{item[titleIndex]||''}}" />
+  </block>
+</van-cell-group> -->
+  <view class="table-title">
+    <view class="th">
+      <view class="tr">序号</view>
+      <view wx:for="{{titles}}" wx:for-item="title" wx:for-index="titleIndex" wx:key="*this" class="tr">{{title}}</view>
+    </view>
+    <view class="th" wx:for="{{list}}" bindtap="toDetail" data-id="{{item.user_id}}" wx:key="index">
+      <view class="td">
+        <view class="grid">
+          <view class="text">{{index+1}}</view>
+        </view>
+      </view>
+      <view wx:for="{{titles}}" wx:for-item="title" wx:for-index="titleIndex" wx:key="*this" class="td">
+        <view class="grid">
+          <view wx:if="{{titleIndex==='img'}}">
+            <image class="avatar" src="{{item[titleIndex]||'/static/images/search_no.png'}}"></image>
+          </view>
+          <view wx:else class="text">
+            <view>{{item[titleIndex]||''}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+  </view>
+
+</view>

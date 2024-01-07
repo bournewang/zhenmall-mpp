@@ -1,0 +1,52 @@
+@import "/iconfonts.wxss";
+.style_1 {
+  font-size: 32rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5rpx;
+  box-sizing: border-box;
+  line-height: 30px;
+
+  .text {
+    padding: 0 24rpx;
+
+  }
+
+  .line {
+    height: 1px;
+    width: 60rpx;
+    display: block;
+    box-sizing: border-box;
+  }
+
+}
+
+.style_2 {
+  padding: 10rpx;
+
+  .title, .subtitle {
+    font-size: 32rpx;
+    line-height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .title {
+    .text {
+      font-size: 32rpx;
+      padding: 0 24rpx;
+      font-weight: bold;
+    }
+  }
+
+  .subtitle {
+    .text {
+      font-weight: 100;
+      word-spacing: 40rpx;
+    }
+
+
+  }
+}
