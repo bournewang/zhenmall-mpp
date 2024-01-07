@@ -9,7 +9,7 @@ let api = 'https://shop.yzsmjkkjcom.com/api'
 const accountInfo = wx.getAccountInfoSync()
 console.log('accountInfo', accountInfo)
 if (accountInfo.miniProgram.envVersion == "develop") {
-  // api = 'http://mall.yzsmjkkjcom.com/api'
+  api = 'http://mall.yzsmjkkjcom.com/api'
 }
 
 // const api = 'http://mall.yzsmjkkjcom.com/api'

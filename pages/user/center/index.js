@@ -76,6 +76,8 @@ Page({
   },
   async loadInfo() {
     const res = await info().catch(_ => false)
+    res.data.balance = Number(res.data.balance)
+    res.data.quota = Number(res.data.quota)
     this.setData({ info: res.data || {} })
   },
   toQr() {

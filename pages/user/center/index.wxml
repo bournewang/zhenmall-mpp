@@ -228,7 +228,7 @@
 <view class="withdraw-dialog" wx:if="{{showWithdraw}}">
   <view class="form">
     <view class="label">
-      余额：{{info.balance}}元
+      余额：{{info.balance|| "0"}}元
     </view>
     <view class="label">
       提现额度：{{info.quota||"0"}}元
