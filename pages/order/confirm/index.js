@@ -32,6 +32,7 @@ Page({
   },
   async getUserInfo() {
     const res = await info().catch(_ => false)
+    res.data.useable_balance = Number(res.data.useable_balance)
     this.setData({ info: res.data })
   },
   async loadList() {

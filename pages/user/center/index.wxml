@@ -234,7 +234,7 @@
       提现额度：{{info.quota||"0"}}元
     </view>
     <view class="label">
-      可提现金额：{{info.quota > info.balance ? info.balance : (info.quota||'0')}}元
+      可提现金额：{{info.useable_balance}}元
     </view>
     <view class="label" style="color: #db2020;">
       说明：满100可提现，只能提现100的整数倍

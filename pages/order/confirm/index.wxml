@@ -60,10 +60,10 @@
   <view class="title">特殊需求备注</view>
   <textarea class="input" bindinput='inputRemark' placeholder="请写下您的特殊需求备注"></textarea>
 </view>
-<view class="use-balance" wx:if="{{info.balance&& info.balance >= amount}}">
+<view class="use-balance" wx:if="{{info.useable_balance&& info.useable_balance >= amount}}">
   <!-- <view class="label">使用余额(可用余额 ￥{{info.balance}})</view> -->
   <!-- <view class="label"></view> -->
-  <view class="label">使用余额({{info.balance}}元)</view>
+  <view class="label">使用余额({{info.useable_balance}}元)</view>
   <checkbox-group bindchange="useBalanceChange">
     <checkbox checked="{{useBalance}}" color="red"/>
   </checkbox-group>

@@ -340,9 +340,8 @@ button::after {
     width: 50%;
     padding: 20rpx;
     position: relative;
-    &:first-child{
-      border-right: 1px #eee solid;
-    }
+    border-right: 1px #eee solid;
+    
     .label{
       font-size: 28rpx;
     }

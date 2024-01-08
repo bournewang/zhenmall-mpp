@@ -77,6 +77,7 @@ Page({
   async loadInfo() {
     const res = await info().catch(_ => false)
     res.data.balance = Number(res.data.balance)
+    res.data.useable_balance = Number(res.data.useable_balance)
     res.data.quota = Number(res.data.quota)
     this.setData({ info: res.data || {} })
   },
@@ -130,11 +131,11 @@ Page({
     fangdou = setTimeout(() => {
       let { value } = e.detail
       console.log(value)
-      if (value > this.data.info.quota) {
-        value = this.data.info.quota || 0
-      }
-      if (value > this.data.info.balance) {
-        value = this.data.info.balance
+      // if (value > this.data.info.quota) {
+      //   value = this.data.info.quota || 0
+      // }
+      if (value > this.data.info.useable_balance) {
+        value = this.data.info.useable_balance
       }
       if (value > 100) {
         value = Math.floor(value / 100) * 100
@@ -156,7 +157,7 @@ Page({
       wx.$message.error('提现额度不足')
       return
     }
-    if (withdrawAmount > this.data.info.balance) {
+    if (withdrawAmount > this.data.info.useable_balance) {
       wx.$message.error('余额不足')
       return
     }
