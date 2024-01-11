@@ -106,3 +106,14 @@ export function withdraw(data){
     data
   })
 }
+
+export function team(){
+  return request({
+    uri: `/user/team`,
+  })
+}
+export function directMembersRange(){
+  return request({
+    uri: `/direct-members-range`,
+  })
+}

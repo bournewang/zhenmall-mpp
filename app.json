@@ -37,7 +37,8 @@
     "pages/user/billing/detail",
     "pages/user/balance/records",
     "pages/user/quota/records",
-    "pages/user/withdraw/records"
+    "pages/user/withdraw/records",
+    "pages/user/friends/rank"
   ],
   "tabBar": {
     "color": "#bababa",
