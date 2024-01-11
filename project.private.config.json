@@ -7,6 +7,13 @@
     "miniprogram": {
       "list": [
         {
+          "name": "",
+          "pathName": "pages/user/friends/direct",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
           "name": "好友榜单",
           "pathName": "pages/user/friends/rank",
           "query": "",

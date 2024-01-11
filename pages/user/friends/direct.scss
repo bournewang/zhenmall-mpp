@@ -1,0 +1,61 @@
+page {
+  background-color: #eee;
+  // padding: 20rpx;
+  box-sizing: border-box;
+}
+.list-item{
+  background-color: #fff;
+  padding: 20rpx 30rpx;
+  box-sizing: border-box;
+  margin-top: 20rpx;
+  .info{
+    height: 100rpx;
+    display: flex;
+    .avatar{
+      border-radius: 50%;
+      width: 80rpx;
+      height: 80rpx;
+      overflow: hidden;
+      // border: 1px solid #eee;
+      image{
+        width: 80rpx;
+        height: 80rpx;
+      }
+    }
+    .nickname{
+      margin-left: 20rpx;
+      font-weight: bold;
+      font-size: 28rpx;
+    }
+  }
+ 
+}
+.items {
+  display: flex;
+  .item {
+    background-color: #fff;
+    box-sizing: border-box;
+    // border: 1px solid #ddd;
+    border-radius: 15px;
+    // box-shadow: 0 0 5px #ddd;
+    padding: 20rpx;
+    flex: 1;
+    margin: 10rpx 10rpx;
+    background-color: #fadddd;
+    .label,
+    .value {
+      text-align: center;
+    }
+
+    .label {
+      font-size: 24rpx;
+    }
+
+    .value {
+      margin-bottom: 15rpx;
+      font-size: 28rpx;
+      font-weight: bold;
+      color: #db2020;
+    }
+  }
+}

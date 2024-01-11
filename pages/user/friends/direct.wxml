@@ -1,0 +1,54 @@
+<!--pages/user/friends/direct.wxml-->
+<!-- <view class="header list">
+  <view class="info">
+    <view class="avatar">
+      <image src="{{header.img||'/static/images/search_no.png'}}" mode="widthFix" />
+    </view>
+    <view class="nickname">{{header.label}}</view>
+
+  </view>
+
+</view> -->
+<view class="list">
+  <view class="list-item" wx:for="{{list}}" wx:key="index">
+    <view class="info">
+      <view class="avatar">
+        <image src="{{item.head.img||'/static/images/search_no.png'}}" mode="widthFix" />
+      </view>
+      <view class="nickname">{{item.head.label}}</view>
+    </view>
+
+
+    <view class="items">
+      <view class="item">
+        <view class="value">{{item.data[4].value}}</view>
+        <view class="label">{{item.data[4].label}}</view>
+      </view>
+      <view class="item">
+        <view class="value">{{item.data[3].value}}</view>
+        <view class="label">{{item.data[3].label}}</view>
+      </view>
+      <view class="item">
+        <view class="value">{{item.data[5].value}}</view>
+        <view class="label">{{item.data[5].label}}</view>
+      </view>
+    </view>
+    <view class="items">
+      <view class="item">
+        <view class="value">{{item.data[2].value}}</view>
+        <view class="label">{{item.data[2].label}}</view>
+      </view>
+      <view class="item">
+        <view class="value">{{item.data[0].value}}</view>
+        <view class="label">{{item.data[0].label}}</view>
+      </view>
+      <view class="item">
+        <view class="value">{{item.data[1].value}}</view>
+        <view class="label">{{item.data[1].label}}</view>
+      </view>
+    </view>
+
+
+  </view>
+
+</view>

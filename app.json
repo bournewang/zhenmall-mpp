@@ -38,7 +38,8 @@
     "pages/user/balance/records",
     "pages/user/quota/records",
     "pages/user/withdraw/records",
-    "pages/user/friends/rank"
+    "pages/user/friends/rank",
+    "pages/user/friends/direct"
   ],
   "tabBar": {
     "color": "#bababa",

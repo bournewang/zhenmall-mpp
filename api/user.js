@@ -117,3 +117,9 @@ export function directMembersRange(){
     uri: `/direct-members-range`,
   })
 }
+
+export function directTeam(){
+  return request({
+    uri: `/user/direct-team`,
+  })
+}

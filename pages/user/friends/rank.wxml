@@ -13,7 +13,7 @@
     <view class="label">{{team[5].label}}</view>
   </view>
 </view>
-<view class="items">
+<navigator class="items" hover-class="none" url="/pages/user/friends/direct">
   <view class="item">
     <view class="value">{{team[2].value}}</view>
     <view class="label">{{team[2].label}}</view>
@@ -26,7 +26,7 @@
     <view class="value">{{team[1].value}}</view>
     <view class="label">{{team[1].label}}</view>
   </view>
-</view>
+</navigator>
 
 <view class="list">
   <view class="header">直推排行榜</view>
