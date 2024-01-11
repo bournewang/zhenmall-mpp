@@ -117,12 +117,12 @@
       </view>
     </navigator>
 
-    <navigator class="item" url='/pages/user/friends/rank' hover-class="none">
+    <!-- <navigator class="item" url='/pages/user/friends/rank' hover-class="none">
       <text class="a">好友排名</text>
       <view class="go">
         <image src="/static/images/icons/go.png"></image>
       </view>
-    </navigator>
+    </navigator> -->
    
   </view>
 

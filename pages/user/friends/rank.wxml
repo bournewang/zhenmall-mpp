@@ -1,29 +1,35 @@
 <!--pages/user/friends/rank.wxml-->
 <view class="items">
   <view class="item">
-    <view class="label">团队人数</view>
-    <view class="value">{{team.team_members||'0'}}</view>
+    <view class="value">{{team[4].value}}</view>
+    <view class="label">{{team[4].label}}</view>
   </view>
   <view class="item">
-    <view class="label">直推人数</view>
-    <view class="value">{{team.direct_members||'0'}}</view>
+    <view class="value">{{team[3].value}}</view>
+    <view class="label">{{team[3].label}}</view>
+  </view>
+  <view class="item">
+    <view class="value">{{team[5].value}}</view>
+    <view class="label">{{team[5].label}}</view>
   </view>
 </view>
-
 <view class="items">
   <view class="item">
-    <view class="label">昨日新进人数</view>
-    <view class="value">{{team.yesterday_members||'0'}}</view>
+    <view class="value">{{team[2].value}}</view>
+    <view class="label">{{team[2].label}}</view>
   </view>
   <view class="item">
-    <view class="label">昨日收入</view>
-    <view class="value">{{team.yesterday_income||'0'}}</view>
+    <view class="value">{{team[0].value}}</view>
+    <view class="label">{{team[0].label}}</view>
+  </view>
+  <view class="item">
+    <view class="value">{{team[1].value}}</view>
+    <view class="label">{{team[1].label}}</view>
   </view>
 </view>
 
-
 <view class="list">
-  <view class="header">榜单</view>
+  <view class="header">直推排行榜</view>
   <view class="title">
     <view class="index">排名</view>
     <view class="nickname">用户</view>
@@ -32,10 +38,10 @@
   <view class="item" wx:for="{{list}}" wx:key="this">
     <view class="index">
       <image wx:if="{{index<3}}" src="/static/icons/rank{{index+1}}.png" mode="" />
-      <view class="text">{{index+1}}</view>
+      <view class="text">{{item.index}}</view>
     </view>
-    <view class="nickname">{{item.nickname||item.mobile}}</view>
-    <view class="num">{{item.direct_members}}</view>
+    <view class="nickname">{{item.label}}</view>
+    <view class="num">{{item.value}}</view>
   </view>
 </view>
 

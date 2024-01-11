@@ -63,6 +63,12 @@
         "text": "购物车"
       },
       {
+        "pagePath": "pages/user/friends/rank",
+        "iconPath": "static/images/ic_detail_star_normal.png",
+        "selectedIconPath": "static/images/ic_detail_star.png",
+        "text": "好友"
+      },
+      {
         "pagePath": "pages/user/center/index",
         "iconPath": "static/images/icons/ic_tab_me.png",
         "selectedIconPath": "static/images/icons/ic_tab_me_on.png",
